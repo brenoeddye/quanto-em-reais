@@ -1,6 +1,7 @@
 export const light = {
     home: {
-        background: '#e5e5e5'
+        background: '#e5e5e5',
+        color: '#000'
     }
 }
 

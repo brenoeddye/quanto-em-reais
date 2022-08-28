@@ -1,7 +1,11 @@
-import { injectGlobal } from 'vue3-styled-components'
+import styled from 'vue3-styled-components'
 
-injectGlobal`
-    body {
-        margin: 0
-    }
+export const Global = styled.div`
+    background-color: ${({theme}) => theme.dark.home.background};
+    width: 100vw;
+    height: 100vh;
+    color: ${({theme}) => theme.dark.home.color};
+    transition: all .3s ease-in-out;
 `;
+
+export default Global

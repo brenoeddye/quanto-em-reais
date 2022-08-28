@@ -1,8 +1,9 @@
 <script>
 import CustomThemeProvider from "./ThemeProvider.vue"
+import Global from './App'
 
 export default {
-  components: { CustomThemeProvider },
+  components: { Global, CustomThemeProvider },
   data() {
     return {
       title: 'Quanto em reais?'
@@ -13,7 +14,9 @@ export default {
 
 <template>
   <CustomThemeProvider>
+    <Global>
       {{ title }}
+    </Global>
   </CustomThemeProvider>
 </template>
 
