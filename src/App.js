@@ -1,10 +1,10 @@
 import styled from 'vue3-styled-components'
 
 export const Global = styled.div`
-    background-color: ${({theme}) => theme.dark.home.background};
+    background-color: ${props => props.theme.home.background};
     width: 100vw;
     height: 100vh;
-    color: ${({theme}) => theme.dark.home.color};
+    color: ${props => props.theme.home.color};
     transition: all .3s ease-in-out;
 `;
 

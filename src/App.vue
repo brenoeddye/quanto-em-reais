@@ -1,21 +1,22 @@
 <script>
 import CustomThemeProvider from "./ThemeProvider.vue"
 import Global from './App'
+import Container from '@/utils/Container'
+import Input from '@/components/input/Input.vue'
+import Logo from '@/components/logo/Logo.vue'
 
 export default {
-  components: { Global, CustomThemeProvider },
-  data() {
-    return {
-      title: 'Quanto em reais?'
-    }
-  }
+  components: { Global, CustomThemeProvider, Input, Logo, Container }
 }
 </script>
 
 <template>
   <CustomThemeProvider>
     <Global>
-      {{ title }}
+      <Container>
+        <Logo />
+        <Input type="text" placeholder="R$0,00" />
+      </Container>
     </Global>
   </CustomThemeProvider>
 </template>
