@@ -25,7 +25,7 @@ export default {
   created() {
     this.userTheme = localStorage.getItem('data-theme')
     if(this.userTheme == '' || this.userTheme == null)
-      return setTheme('dark');
+      return this.setTheme('dark');
   }
 };
 </script>
