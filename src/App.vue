@@ -1,31 +1,29 @@
-<script>
-import CustomThemeProvider from "./ThemeProvider.vue"
-import Global from './App'
-import Container from '@/utils/Container'
-import Input from '@/components/input/Input.vue'
-import Logo from '@/components/logo/Logo.vue'
+<script setup lang="ts">
 
-export default {
-  components: { Global, CustomThemeProvider, Input, Logo, Container }
-}
 </script>
 
 <template>
-  <CustomThemeProvider>
-    <Global>
-      <Container>
-        <Logo />
-        <Input type="text" placeholder="R$0,00" />
-      </Container>
-    </Global>
-  </CustomThemeProvider>
+  <div>
+    <LayoutLogo />
+    <div class="qer__content">
+      <Input type="text" placeholder="R$0,00"/>
+      <span>vale</span>
+      <Input type="text" placeholder="R$5,60" />
+      <span>reais</span>
+    </div>
+  </div>
 </template>
 
-<style lang="css">
-@import "./assets/fonts/font.css";
-
+<style lang="scss">
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: $secondary;
+  color: $font-color;
+  max-width: 900px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
