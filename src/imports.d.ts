@@ -15,6 +15,7 @@ declare global {
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
+  const input: typeof import('C:/Users/breno/OneDrive/Documentos/Development/quanto-em-reais/src/components/Input.vue')['default']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
   const mapActions: typeof import('pinia')['mapActions']
@@ -79,6 +80,7 @@ declare module 'vue' {
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly input: UnwrapRef<typeof import('C:/Users/breno/OneDrive/Documentos/Development/quanto-em-reais/src/components/Input.vue')['default']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>

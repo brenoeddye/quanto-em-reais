@@ -1,15 +1,23 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue'
 
+export default defineComponent({
+    data() {
+      return {
+        coin: 'Dolares'
+      }
+    }
+})
 </script>
 
 <template>
   <div>
-    <LayoutLogo />
+    <LayoutLogo :coin="this.coin" />
     <div class="qer__content">
       <Input type="text" placeholder="R$0,00"/>
-      <span>vale</span>
+      <span class="qer__content--text">vale</span>
       <Input type="text" placeholder="R$5,60" />
-      <span>reais</span>
+      <span class="qer__content--text">reais</span>
     </div>
   </div>
 </template>
@@ -25,5 +33,19 @@ body {
 
 a {
   text-decoration: none;
+}
+
+input {
+  &:first-child {
+    text-align: right;
+  }
+}
+
+.qer {
+  &__content {
+    &--text {
+      padding: 0 10px;
+    }
+  }
 }
 </style>
