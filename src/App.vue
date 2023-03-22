@@ -1,10 +1,21 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import ApiService from "./core/data/ApiService"
 
 export default defineComponent({
     data() {
       return {
         coin: 'Dolares'
+      }
+    },
+    methods: {
+      getCoinName(coin: string) {
+        ApiService.get(coin)
+          .then((response: responseData) => {
+            console.log(response.data)
+          })
+          .catch((e: Error) => {
+            console.log(e)
+          })
       }
     }
 })
@@ -13,6 +24,9 @@ export default defineComponent({
 <template>
   <div>
     <LayoutLogo :coin="this.coin" />
+    <div class="qer__quickAccess">
+
+    </div>
     <div class="qer__content">
       <Input type="text" placeholder="R$0,00"/>
       <span class="qer__content--text">vale</span>
@@ -28,6 +42,9 @@ body {
   background-color: $secondary;
   color: $font-color;
   max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
 }
 
@@ -42,7 +59,13 @@ input {
 }
 
 .qer {
+  &__quickAccess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__content {
+    position: absolute;
     &--text {
       padding: 0 10px;
     }

@@ -30,6 +30,7 @@ export default defineConfig({
       dirs: [
         './src/composables/*',
         './src/components/*',
+        './src/core/*',
         './src/store/*',
         './src/utils/*',
       ],

@@ -4,17 +4,14 @@ import { defineComponent } from 'vue'
 export default defineComponent({
     props: {
         coin: String
-    },
-    setup() {
-        
-    },
+    }
 })
 </script>
 
 <template>
     <h1 class="logo">
         <a href="/">
-            <span class="logo__first">Quantos <span class="logo__coin">{{ coin }}</span> em</span>
+            <span class="logo__first">Quanto em</span>
             <p class="logo__second">Reais?</p>
         </a>
     </h1>
