@@ -1,7 +1,7 @@
-import axios, { AxiosInstance } from "axios";
+import axios from "axios";
 
-const apiClient: AxiosInstance  = axios.create({
-    baseURL: "https://economia.awesomeapi.com.br/",
+const apiClient = axios.create({
+    baseURL: "https://economia.awesomeapi.com.br",
     headers: {
         "Content-type": "application/json"
     }

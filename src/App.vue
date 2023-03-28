@@ -1,38 +1,53 @@
 <script lang="ts">
-import ApiService from "./core/data/ApiService"
-
 export default defineComponent({
     data() {
       return {
-        coin: 'Dolares'
+        dolar: '',
+        euro: '',
+        bitcoin: '',
+        convertedCoin: '1.00'
       }
     },
     methods: {
-      getCoinName(coin: string) {
-        ApiService.get(coin)
-          .then((response: responseData) => {
-            console.log(response.data)
+      getAll() {
+        apiService.getDolar()
+          .then((d: any) => {
+            this.dolar = parseFloat(d).toFixed(2)
           })
-          .catch((e: Error) => {
-            console.log(e)
+
+        apiService.getEuro()
+          .then((d: any) => {
+            this.euro = parseFloat(d).toFixed(2)
+          })
+
+        apiService.getBitcoin()
+          .then((d: any) => {
+            this.bitcoin = parseFloat(d).toFixed(2)
           })
       }
+    },
+    mounted() {
+      this.getAll()
     }
 })
 </script>
 
 <template>
   <div>
-    <LayoutLogo :coin="this.coin" />
+    <LayoutLogo />
     <div class="qer__quickAccess">
 
     </div>
     <div class="qer__content">
-      <Input type="text" placeholder="R$0,00"/>
-      <span class="qer__content--text">vale</span>
-      <Input type="text" placeholder="R$5,60" />
-      <span class="qer__content--text">reais</span>
+      <Input type="number" label="US$" v-model:modelValue="convertedCoin" />
+      <span class="qer__content--text">VALE</span>
+      <Input type="number" label="R$" v-model:modelValue="dolar" />
     </div>
+
+    {{ convertedCoin }}
+    {{ dolar }}
+
+    <Footer />
   </div>
 </template>
 
@@ -52,10 +67,8 @@ a {
   text-decoration: none;
 }
 
-input {
-  &:first-child {
+.inputForm:first-child input {
     text-align: right;
-  }
 }
 
 .qer {
@@ -66,8 +79,12 @@ input {
   }
   &__content {
     position: absolute;
+    display: flex;
+    align-items: center;
+    transform: translateX(-20%);
     &--text {
       padding: 0 10px;
+      position: relative;
     }
   }
 }
